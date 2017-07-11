@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: bf0cc27e3b8e1442290bf1bafd625cf5
+timeCreated: 1499286108
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: atlas_4@2x_0
+    21300002: atlas_4@2x_1
+    21300004: atlas_4@2x_2
+    21300006: atlas_4@2x_3
+    21300008: atlas_4@2x_4
+    21300010: atlas_4@2x_5
+    21300012: atlas_4@2x_6
+    21300014: atlas_4@2x_7
+    21300016: atlas_4@2x_8
+    21300018: atlas_4@2x_9
+    21300020: atlas_4@2x_10
+    21300022: atlas_4@2x_11
+    21300024: atlas_4@2x_12
+    21300026: atlas_4@2x_13
+    21300028: atlas_4@2x_14
+    21300030: atlas_4@2x_15
+    21300032: atlas_4@2x_16
+    21300034: atlas_4@2x_17
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlas_4@2x_0
+      rect:
+        serializedVersion: 2
+        x: 771.93567
+        y: 2296
+        width: 882.2655
+        height: 913
+      alignment: 9
+      pivot: {x: 0.54201394, y: 0.16265436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_1
+      rect:
+        serializedVersion: 2
+        x: 1893.6321
+        y: 1796.5092
+        width: 1396.6941
+        height: 1255.997
+      alignment: 9
+      pivot: {x: 0.54775566, y: 0.6065905}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_2
+      rect:
+        serializedVersion: 2
+        x: 3319.7249
+        y: 312.00003
+        width: 1101.2346
+        height: 2512.532
+      alignment: 9
+      pivot: {x: 0.8927145, y: 0.9196759}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_3
+      rect:
+        serializedVersion: 2
+        x: 4479.5063
+        y: 361.82037
+        width: 877.5752
+        height: 2324.2708
+      alignment: 9
+      pivot: {x: 0.8095549, y: 0.9017434}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_4
+      rect:
+        serializedVersion: 2
+        x: 5434.192
+        y: 361.36133
+        width: 557.3545
+        height: 2354.0474
+      alignment: 9
+      pivot: {x: 0.5135283, y: 0.92793363}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_5
+      rect:
+        serializedVersion: 2
+        x: 6110.4937
+        y: 814
+        width: 408.23438
+        height: 1758.2854
+      alignment: 9
+      pivot: {x: 0.43180665, y: 0.8956254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_6
+      rect:
+        serializedVersion: 2
+        x: 6617.331
+        y: 475.88232
+        width: 435.34912
+        height: 2232.019
+      alignment: 9
+      pivot: {x: 0.23719065, y: 0.95535874}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_7
+      rect:
+        serializedVersion: 2
+        x: 7195.3965
+        y: 355.28134
+        width: 670.18994
+        height: 2348.339
+      alignment: 9
+      pivot: {x: 0.27104315, y: 0.88760173}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_8
+      rect:
+        serializedVersion: 2
+        x: 7973.3394
+        y: 593.1793
+        width: 815.0845
+        height: 2192.005
+      alignment: 9
+      pivot: {x: 0.16047393, y: 0.9472399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_9
+      rect:
+        serializedVersion: 2
+        x: 9039.251
+        y: 2556.0002
+        width: 234.98438
+        height: 200.10938
+      alignment: 9
+      pivot: {x: 0.50108886, y: 0.49722683}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_10
+      rect:
+        serializedVersion: 2
+        x: 9442.219
+        y: 2556.0002
+        width: 172.42188
+        height: 179.65454
+      alignment: 9
+      pivot: {x: 0.50330764, y: 0.498177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_11
+      rect:
+        serializedVersion: 2
+        x: 9039.251
+        y: 2270
+        width: 234.98438
+        height: 202.51562
+      alignment: 9
+      pivot: {x: 0.50108886, y: 0.4962568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_12
+      rect:
+        serializedVersion: 2
+        x: 9443.218
+        y: 2270
+        width: 172.42188
+        height: 180.85791
+      alignment: 9
+      pivot: {x: 0.5033133, y: 0.4948623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2146.5398
+        height: 2002.3422
+      alignment: 9
+      pivot: {x: 0.5586361, y: 0.9517214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_14
+      rect:
+        serializedVersion: 2
+        x: 9209.26
+        y: 1680.4036
+        width: 236.35547
+        height: 301.30933
+      alignment: 9
+      pivot: {x: 0.42487648, y: 0.5851918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_15
+      rect:
+        serializedVersion: 2
+        x: 9290.072
+        y: 1186.7383
+        width: 293.4287
+        height: 339.1725
+      alignment: 9
+      pivot: {x: 0.5242736, y: 0.6831803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_16
+      rect:
+        serializedVersion: 2
+        x: 9138.243
+        y: 484.99997
+        width: 259.04688
+        height: 226.58047
+      alignment: 9
+      pivot: {x: 0.5008972, y: 0.49871895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: atlas_4@2x_17
+      rect:
+        serializedVersion: 2
+        x: 9604.205
+        y: 443
+        width: 251.79492
+        height: 226.58044
+      alignment: 9
+      pivot: {x: 0.5115072, y: 0.49871886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 98257196089344
+  assetBundleName: 
+  assetBundleVariant: 
