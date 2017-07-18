@@ -3,19 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	Rigidbody rb;
-	private float runningForce = 0.1f;
+	// Rigidbody rb;
+	CharacterController controller;
+	private float speed = 8f;
+	private float jumpSpeed = 10f;
+	private float gravity = 9.8f;
 	public Animator animator;
 	private bool flipped = false;
+	private Vector3 moveDirection = Vector3.zero;
 
 	void Start () {
-		rb = GetComponent<Rigidbody>();
+		controller = GetComponent<CharacterController>();
 	}
 	
 	void FixedUpdate () {
-		float horizontal = Input.GetAxisRaw("Horizontal") * runningForce;
-		float vertical = Input.GetAxisRaw("Vertical") * runningForce;
-		rb.AddForce(new Vector3(horizontal, 0, vertical), ForceMode.Impulse);
+        if (controller.isGrounded) {
+            moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+            if (Input.GetButton("Jump"))
+                moveDirection.y = jumpSpeed;
+            
+        }
+		float horizontal = moveDirection.x;
+        moveDirection.y -= gravity * Time.deltaTime;
+        controller.Move(moveDirection * Time.deltaTime);
 		if (horizontal > 0 && !flipped) {
 			FlipSprite();
 		} else if (horizontal < 0 && flipped) {
@@ -24,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update() {
-		animator.SetFloat("speed", rb.velocity.magnitude);
+		animator.SetFloat("speed", controller.velocity.magnitude);
 	}
 
 	void FlipSprite() {
