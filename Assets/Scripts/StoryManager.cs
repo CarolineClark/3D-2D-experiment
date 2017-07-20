@@ -1,33 +1,37 @@
 using UnityEngine;
+using System.Collections;
 
+using System.Collections.Generic;       //Allows us to use Lists. 
+    
 public class StoryManager : MonoBehaviour {
-	private static StoryManager storyManager;
-	public static StoryManager instance  
-    {
-        get
-        {
-            if (!storyManager)
-            {
-				storyManager = FindObjectOfType (typeof (StoryManager)) as StoryManager;
-                if (!storyManager)
-                {
-                    Debug.LogError("Need an active StoryManager on a GameObject in your scene");
-                }
-                else 
-                {
-                    storyManager.Init();
-                }
-            }
-            return storyManager;
+
+    public static StoryManager instance = null;
+
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else if (instance != this) {
+            Destroy(gameObject);
+            return;
         }
+        DontDestroyOnLoad(gameObject);
+        InitGame();
     }
 
-	void Init() 
-    {
-        // setup story
+    void InitGame() {
+        // load level and state
     }
 
-    public static string TalkToNPC(string NPCId) {
-        return "stuff";
+    public string GetSpeech(string key) {
+        if (key == Constants.BAKER_GAMEOBJECT_NAME) {
+            return GetBakerSpeech();
+        }
+        return "";
     }
+
+    private string GetBakerSpeech() {
+        return "What do you want?";
+    }
+
+
 }
