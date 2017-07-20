@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d90d1bc8cdced47669f6f4592cf0e643
-timeCreated: 1499251224
+guid: 2608333c4caa14cf89f710724b439441
+timeCreated: 1500484360
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: open-eyes_0
-    21300002: open-eyes_1
+    21300000: Asset 6@3x_0
+    21300002: Asset 6@3x_1
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -14,6 +14,8 @@ TextureImporter:
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
@@ -29,10 +31,13 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
+    serializedVersion: 2
     filterMode: -1
     aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapU: 1
+    wrapV: -1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -96,32 +101,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: open-eyes_0
+      name: Asset 6@3x_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 36
+        width: 1529
+        height: 1353
       alignment: 9
-      pivot: {x: 0.5695981, y: 0.52064896}
+      pivot: {x: 0.1777696, y: 0.20328812}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: open-eyes_1
+      name: Asset 6@3x_1
       rect:
         serializedVersion: 2
-        x: 72
+        x: 1564
         y: 0
-        width: 36
-        height: 36
+        width: 1529
+        height: 1353
       alignment: 9
-      pivot: {x: 0.4455507, y: 0.47099316}
+      pivot: {x: 0.17578061, y: 0.21902278}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
+      physicsShape: []
       tessellationDetail: 0
     outline: []
+    physicsShape: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	// Rigidbody rb;
 	CharacterController controller;
 	private float speed = 8f;
 	private float jumpSpeed = 10f;

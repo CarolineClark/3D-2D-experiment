@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: 28391e5c7a54946a6889a5f461ed187b
+timeCreated: 1500493271
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: baker@3x_0
+    21300002: baker@3x_1
+    21300004: baker@3x_2
+    21300006: baker@3x_3
+    21300008: baker@3x_4
+    21300010: baker@3x_5
+    21300012: baker@3x_6
+    21300014: baker@3x_7
+    21300016: baker@3x_8
+    21300018: baker@3x_9
+    21300020: baker@3x_10
+    21300022: baker@3x_11
+    21300024: baker@3x_12
+    21300026: baker@3x_13
+    21300028: baker@3x_14
+    21300030: baker@3x_15
+    21300032: baker@3x_16
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: baker@3x_0
+      rect:
+        serializedVersion: 2
+        x: 123.57428
+        y: 2000.6438
+        width: 460.8239
+        height: 624.3562
+      alignment: 9
+      pivot: {x: 0.5445108, y: 0.310618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_1
+      rect:
+        serializedVersion: 2
+        x: 829.54047
+        y: 2231.1174
+        width: 1166.7397
+        height: 392.0935
+      alignment: 9
+      pivot: {x: 0.50398743, y: 0.77126426}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_2
+      rect:
+        serializedVersion: 2
+        x: 2079.3914
+        y: 2085.1372
+        width: 851.9458
+        height: 388.93262
+      alignment: 9
+      pivot: {x: 0.51004165, y: 0.7188789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1461.0381
+        width: 323.38824
+        height: 482.39197
+      alignment: 9
+      pivot: {x: 0.5942605, y: 0.84563386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_4
+      rect:
+        serializedVersion: 2
+        x: 591.90826
+        y: 1497.6641
+        width: 343.5279
+        height: 490.5492
+      alignment: 9
+      pivot: {x: 0.417359, y: 0.8026369}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_5
+      rect:
+        serializedVersion: 2
+        x: 1043.6041
+        y: 1205.1194
+        width: 866.5764
+        height: 857.39453
+      alignment: 9
+      pivot: {x: 0.5047801, y: 0.6215953}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_6
+      rect:
+        serializedVersion: 2
+        x: 2269.428
+        y: 1468.791
+        width: 242.24023
+        height: 364.03174
+      alignment: 9
+      pivot: {x: 0.43175477, y: 0.85994995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_7
+      rect:
+        serializedVersion: 2
+        x: 2695
+        y: 1476.5912
+        width: 232.49316
+        height: 352.78882
+      alignment: 9
+      pivot: {x: 0.49678877, y: 0.5000408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 954.511
+        width: 321.0186
+        height: 441.98047
+      alignment: 9
+      pivot: {x: 0.39398396, y: 0.9031757}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_9
+      rect:
+        serializedVersion: 2
+        x: 550.7845
+        y: 1002.61334
+        width: 327.85162
+        height: 442.41937
+      alignment: 9
+      pivot: {x: 0.5956756, y: 0.9044307}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_10
+      rect:
+        serializedVersion: 2
+        x: 1176.0272
+        y: 0
+        width: 768.43494
+        height: 1133.7157
+      alignment: 9
+      pivot: {x: 0.5022841, y: 0.49483305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_11
+      rect:
+        serializedVersion: 2
+        x: 2295.5361
+        y: 1006.0341
+        width: 206.07617
+        height: 364.27423
+      alignment: 9
+      pivot: {x: 0.49368078, y: 0.91483665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_12
+      rect:
+        serializedVersion: 2
+        x: 2696.46
+        y: 1025.3551
+        width: 208.5332
+        height: 363.51672
+      alignment: 9
+      pivot: {x: 0.4828836, y: 0.8935488}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_13
+      rect:
+        serializedVersion: 2
+        x: 26.3567
+        y: 456.81964
+        width: 388.1433
+        height: 408.92676
+      alignment: 9
+      pivot: {x: 0.34293997, y: 0.9387776}
+      border: {x: 0, y: 8, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_14
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 501.86017
+        width: 372.69434
+        height: 407.63495
+      alignment: 9
+      pivot: {x: 0.7147869, y: 0.8668964}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_15
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 685.80945
+        width: 419.93604
+        height: 237.00232
+      alignment: 9
+      pivot: {x: 0.49769425, y: 0.4965795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: baker@3x_16
+      rect:
+        serializedVersion: 2
+        x: 2701.0188
+        y: 648.42566
+        width: 419.9812
+        height: 245.05975
+      alignment: 9
+      pivot: {x: 0.33306864, y: 0.752963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 98336326680576
+  assetBundleName: 
+  assetBundleVariant: 
