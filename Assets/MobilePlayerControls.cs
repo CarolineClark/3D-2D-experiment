@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.EventSystems;
 
 public class MobilePlayerControls : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class MobilePlayerControls : MonoBehaviour {
 	public float leftJoystickRange = 200;
     public float rightJoystickRange = 300;
 	public float tapLength = 0.3f;
+    public Animator animator;
     private float jumpSpeed = 15.0F;
     private float gravity = 9.8F;
     private Vector3 moveDirection = Vector3.zero;
@@ -26,17 +28,19 @@ public class MobilePlayerControls : MonoBehaviour {
     private float rightFingerHorizontal;
     private float rightFingerVertical;
 	private bool isMobile;
+    private bool flipped = false;
+    private EventSystem eventSystem;
 
 	void Start () {
-		// isMobile = (Application.platform == RuntimePlatform.Android);
+		// isMobile = (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer);
         isMobile = true;
-        Debug.Log(isMobile);
-
+        Debug.Log("isMobile = " + isMobile);
 		controller = GetComponent<CharacterController>();
 		leftMinDragDistance = 5;
 		rightMinDragDistance = 20;
 		touchPositionsDict = new TouchPositionsDict();
 		rightFingerAction = FingerAction.off;
+        eventSystem = EventSystem.current;
 	}
 
 	void FixedUpdate() {
@@ -46,13 +50,21 @@ public class MobilePlayerControls : MonoBehaviour {
 				moveDirection *= speed;
 				if (rightFingerAction == FingerAction.shortTap) {
 					rightFingerAction = FingerAction.off;
-					moveDirection.y = jumpSpeed;
-					Debug.Log("jumped");
+                    if (!eventSystem.IsPointerOverGameObject()) {
+                        moveDirection.y = jumpSpeed;
+                        Debug.Log("jumped");
+                    }
 				}
 				moveDirection = transform.TransformDirection(moveDirection);
 			}
 			moveDirection.y -= gravity * Time.deltaTime;
 			controller.Move(moveDirection * Time.deltaTime);
+
+            if (leftFingerHorizontal > 0 && !flipped) {
+                FlipSprite();
+            } else if (leftFingerHorizontal < 0 && flipped) {
+                FlipSprite();
+            }
 		}
 	}
 
@@ -61,7 +73,6 @@ public class MobilePlayerControls : MonoBehaviour {
 		// if (!isLocalPlayer) {
         //     return;
         // }
-        Debug.Log("update hit");
 		if (isMobile) {
 			ReadTouches();
 		} else {
@@ -70,6 +81,16 @@ public class MobilePlayerControls : MonoBehaviour {
 			transform.Rotate(0, x, 0);
 			transform.Translate(0, 0, z);
 		}
+        animator.SetFloat("speed", controller.velocity.magnitude);
+	}
+
+	void FlipSprite() {
+		if (flipped) {
+			animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
+		} else {
+			animator.transform.localRotation = Quaternion.Euler(0, 180, 0);
+		}
+		flipped = !flipped;
     }
 
 	void ReadTouches() {
