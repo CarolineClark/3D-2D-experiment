@@ -25,11 +25,13 @@ public class TouchPositionsDict {
         }
 
         public bool onLeft;
+        public bool onButton {get; set;}
 
-        public TouchPositions(Vector3 first, float startTime) {
+        public TouchPositions(Vector3 first, float startTime, bool onButton) {
             this.first = first;
             this.startTime = startTime;
             this.onLeft = IsOnLeft(first);
+            this.onButton = onButton;
         }
 
         bool IsOnLeft(Vector3 position) {
@@ -43,7 +45,7 @@ public class TouchPositionsDict {
         touchPositionsDict = new Dictionary<int, TouchPositions>();
     }
 
-    public void AddFingerPosition(int fingerId, Vector3 first, float startTime) {
+    public void AddFingerPosition(int fingerId, Vector3 first, float startTime, bool onButton) {
         TouchPositions touchPositions;
         bool containsKey = touchPositionsDict.TryGetValue(fingerId, out touchPositions);
         if (containsKey) {
@@ -51,7 +53,7 @@ public class TouchPositionsDict {
             touchPositions.startTime = startTime;
             touchPositions.onLeft = (first.x < (Screen.width / 2));
         } else {
-            touchPositions = new TouchPositions(first, startTime);
+            touchPositions = new TouchPositions(first, startTime, onButton);
             touchPositionsDict.Add(fingerId, touchPositions);
         }
     }
@@ -65,6 +67,10 @@ public class TouchPositionsDict {
     }
     public bool GetOnLeftForId(int fingerId) {
         return GetTouchPositionsForId(fingerId).onLeft;
+    }
+
+    public bool IsOnButtonForId(int fingerId) {
+        return GetTouchPositionsForId(fingerId).onButton;
     }
 
     private TouchPositions GetTouchPositionsForId(int fingerId) {

@@ -48,13 +48,7 @@ public class MobilePlayerControls : MonoBehaviour {
 			if (controller.isGrounded) {
 				moveDirection = new Vector3(leftFingerHorizontal, 0, leftFingerVertical);
 				moveDirection *= speed;
-				if (rightFingerAction == FingerAction.shortTap) {
-					rightFingerAction = FingerAction.off;
-                    if (!eventSystem.IsPointerOverGameObject()) {
-                        moveDirection.y = jumpSpeed;
-                        Debug.Log("jumped");
-                    }
-				}
+				Jump();
 				moveDirection = transform.TransformDirection(moveDirection);
 			}
 			moveDirection.y -= gravity * Time.deltaTime;
@@ -68,11 +62,15 @@ public class MobilePlayerControls : MonoBehaviour {
 		}
 	}
 
+    void Jump() {
+        if (rightFingerAction == FingerAction.shortTap) {
+            rightFingerAction = FingerAction.off;
+            moveDirection.y = jumpSpeed;
+            Debug.Log("jumped");
+        }
+    }
+
     void Update() {
-		// Debug.Log(isLocalPlayer);
-		// if (!isLocalPlayer) {
-        //     return;
-        // }
 		if (isMobile) {
 			ReadTouches();
 		} else {
@@ -95,12 +93,12 @@ public class MobilePlayerControls : MonoBehaviour {
 
 	void ReadTouches() {
 		foreach (Touch touch in Input.touches) {
-			Debug.Log("touched");
 			if (touch.phase == TouchPhase.Began) {
                 touchPositionsDict.AddFingerPosition(
                     touch.fingerId,
                     touch.position,
-                    Time.time
+                    Time.time,
+                    !eventSystem.IsPointerOverGameObject(touch.fingerId)
                 );
             }
             else if (touch.phase == TouchPhase.Moved) {
@@ -122,10 +120,12 @@ public class MobilePlayerControls : MonoBehaviour {
                 Vector3 lastPos = touch.position;
                 float startTime = touchPositionsDict.GetStartTimeForId(touch.fingerId);
 				
-                if (IsSwipeDistanceLargeEnough(firstPos, lastPos, minDistance)) {
-                    CheckTypeOfSwipe(firstPos, lastPos, touch.fingerId);
-                } else {
-                    CheckTypeOfTap(startTime);
+                if (!touchPositionsDict.IsOnButtonForId(touch.fingerId)) {
+                    if (IsSwipeDistanceLargeEnough(firstPos, lastPos, minDistance)) {
+                        CheckTypeOfSwipe(firstPos, lastPos, touch.fingerId);
+                    } else {
+                        CheckTypeOfTap(startTime);
+                    }
                 }
             }
 		}
@@ -180,10 +180,10 @@ public class MobilePlayerControls : MonoBehaviour {
     void CheckTypeOfTap(float start) {
         if (Time.time - start > tapLength) {
             Debug.Log("long tap");
-			rightFingerAction = FingerAction.longTap;
+            rightFingerAction = FingerAction.longTap;
         } else {
             Debug.Log("Short tap");
-			rightFingerAction = FingerAction.shortTap;
+            rightFingerAction = FingerAction.shortTap;
         }
     }
 }

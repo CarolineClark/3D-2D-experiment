@@ -1,10 +1,14 @@
 public class Constants {
-    public static readonly string PLAYER_TAG = "Player";
-    public static readonly string EVENT_NPC_SPEAK = "NPCSpeak";
-    public static readonly string EVENT_NPC_STOP_SPEAK = "NPCStopSpeaking";
-    public static readonly string PLAYER_FROZEN_EVENT = "PlayerFrozen";
-    public static readonly string PLAYER_UNFROZEN_EVENT = "PlayerUnfrozen";
-    public static readonly string BAKERY_SCENE = "Bakery";
-    public static readonly string MAIN_SCENE = "Main";
-    public static readonly string BAKER_GAMEOBJECT_NAME = "Baker";
+    public const string PLAYER_TAG = "Player";
+    public const string EVENT_NPC_SPEAK = "NPCSpeak";
+    public const string EVENT_NPC_STOP_SPEAK = "NPCStopSpeaking";
+    public const string EVENT_NPC_QUESTION = "NPCQuestion";
+    public const string EVENT_PLAYER_RESPONDS_TO_NPC = "PlayerRespondsToNPC";
+    public const string KEY_NPC = "npc_key";
+    public const string KEY_PLAYER_RESPONSE = "playerResponseKey";
+    public const string PLAYER_FROZEN_EVENT = "PlayerFrozen";
+    public const string PLAYER_UNFROZEN_EVENT = "PlayerUnfrozen";
+    public const string BAKERY_SCENE = "Bakery";
+    public const string MAIN_SCENE = "Main";
+    public const string BAKER_GAMEOBJECT_NAME = "Baker";
 }
