@@ -29,6 +29,7 @@ public class MobilePlayerControls : MonoBehaviour {
     private float rightFingerVertical;
 	private bool isMobile;
     private bool flipped = false;
+    private bool cameraFlipped = false;
     private EventSystem eventSystem;
 
 	void Start () {
@@ -90,6 +91,16 @@ public class MobilePlayerControls : MonoBehaviour {
 		}
 		flipped = !flipped;
     }
+
+    public void FlipCamera() {
+		cameraFlipped = !cameraFlipped;
+		int yRotation = 0;
+		if (cameraFlipped) {
+			yRotation = 180;
+		}
+		transform.localRotation = Quaternion.Euler(0, yRotation, 0);
+		EventManager.TriggerEvent(Constants.EVENT_PLAYER_FLIPPED, FlippedCameraMessage.CreateHashtable(cameraFlipped));
+	}
 
 	void ReadTouches() {
 		foreach (Touch touch in Input.touches) {

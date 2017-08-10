@@ -13,18 +13,11 @@ public class NPCDialogMessage {
     }
 
     public static string GetTextFromHashtable(Hashtable h) {
-		
-        if (h != null && h.ContainsKey(TEXT_KEY)) {
-            return (string) h[TEXT_KEY];
-        }
-        return null;
+		return Message.GetValueFromHashtable<string>(h, TEXT_KEY);
     }
 
     public static Sprite GetSpriteFromHashtable(Hashtable h) {
-		if (h != null && h.ContainsKey(IMAGE_KEY)) {
-            return (Sprite) h[IMAGE_KEY];
-        }
-        return null;
+        return Message.GetValueFromHashtable<Sprite>(h, IMAGE_KEY);
     }
 
 } 

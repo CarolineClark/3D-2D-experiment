@@ -12,10 +12,11 @@ public class NPCResponseMessage {
     }
 
     public static string GetKeyFromHashtable(Hashtable h) {
-        if (h != null && h.ContainsKey(Constants.KEY_NPC)) {
-            return (string) h[Constants.KEY_NPC];
-        }
-        return null;
+        return Message.GetValueFromHashtable<string>(h, Constants.KEY_NPC);
+        // if (h != null && h.ContainsKey(Constants.KEY_NPC)) {
+        //     return (string) h[Constants.KEY_NPC];
+        // }
+        // return null;
     }
 
     public static string GetResponseFromHashtable(Hashtable h) {

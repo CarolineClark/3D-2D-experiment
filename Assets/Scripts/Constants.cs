@@ -4,6 +4,7 @@ public class Constants {
     public const string EVENT_NPC_STOP_SPEAK = "NPCStopSpeaking";
     public const string EVENT_NPC_QUESTION = "NPCQuestion";
     public const string EVENT_PLAYER_RESPONDS_TO_NPC = "PlayerRespondsToNPC";
+    public const string EVENT_PLAYER_FLIPPED = "PlayerFlipped";
     public const string KEY_NPC = "npc_key";
     public const string KEY_PLAYER_RESPONSE = "playerResponseKey";
     public const string PLAYER_FROZEN_EVENT = "PlayerFrozen";

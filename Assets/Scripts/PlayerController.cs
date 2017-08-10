@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private float gravity = 9.8f;
 	public Animator animator;
 	private bool flipped = false;
+	private bool cameraFlipped = false;
 	private Vector3 moveDirection = Vector3.zero;
 
 	void Start () {
@@ -27,9 +28,7 @@ public class PlayerController : MonoBehaviour {
 		float horizontal = moveDirection.x;
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
-		if (horizontal > 0 && !flipped) {
-			FlipSprite();
-		} else if (horizontal < 0 && flipped) {
+		if (ShouldFlipSprite()) {
 			FlipSprite();
 		}
 	}
@@ -39,12 +38,33 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void FlipSprite() {
-		if (flipped) {
+		flipped = !flipped;
+		if (!flipped) {
 			animator.transform.localRotation = Quaternion.Euler(0, 0, 0);
 		} else {
 			animator.transform.localRotation = Quaternion.Euler(0, 180, 0);
 		}
+	}
+
+	bool ShouldFlipSprite() {
+		float horizontal = moveDirection.x;
+		if (!cameraFlipped) {
+			return (horizontal > 0 && !flipped) || (horizontal < 0 && flipped);
+		} else {
+			return (horizontal > 0 && flipped) || (horizontal < 0 && !flipped);
+		}
 		
-		flipped = !flipped;
+	}
+
+	public void FlipCamera() {
+		cameraFlipped = !cameraFlipped;
+		FlipSprite();
+
+		int yRotation = 0;
+		if (cameraFlipped) {
+			yRotation = 180;
+		}
+		transform.localRotation = Quaternion.Euler(0, yRotation, 0);
+		EventManager.TriggerEvent(Constants.EVENT_PLAYER_FLIPPED, FlippedCameraMessage.CreateHashtable(cameraFlipped));
 	}
 }
