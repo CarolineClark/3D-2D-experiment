@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour {
 	private float journeyLength;
 	private bool controlledByPlayer = true;
 	IEnumerator movingCameraCoroutine;
+	private bool cameraFlipped = false;
 	private Vector3 playerCameraOffset = new Vector3(0, 4.3f, -11.21f); // TODO this should be changed depending on the area.
 
 
@@ -36,7 +37,6 @@ public class CameraController : MonoBehaviour {
 			endPosition = other.transform.position;
 			startRotation = playerCamera.transform.rotation;
 			endRotation = other.transform.GetChild(0).rotation;
-			Debug.Log("end rotation = " + endRotation);
 			journeyLength = Vector3.Distance(startPosition, endPosition);
 			movingCameraCoroutine = MoveCamera();
 			StartCoroutine(movingCameraCoroutine);
@@ -55,7 +55,7 @@ public class CameraController : MonoBehaviour {
 
 	void OnTriggerExit(Collider other) {
 		StopCoroutine(movingCameraCoroutine);
-		controlledByPlayer = true; // lerp back to player
+		controlledByPlayer = true; // TODO: lerp back to player
 	}
 
 	void FollowPlayer() {
@@ -64,5 +64,16 @@ public class CameraController : MonoBehaviour {
 
 	void SetCameraAngle() {
 		playerCamera.transform.rotation = startRotation;
+	}
+	public void FlipCamera() {
+		cameraFlipped = !cameraFlipped;
+		int yRotation = 0;
+		if (cameraFlipped) {
+			yRotation = 180;
+		}
+		playerCamera.transform.localRotation = Quaternion.Euler(0, yRotation, 0);
+		startRotation.y = yRotation;
+		playerCameraOffset.x *= -1;
+		playerCameraOffset.z *= -1;
 	}
 }
