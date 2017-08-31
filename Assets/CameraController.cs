@@ -54,8 +54,10 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider other) {
-		StopCoroutine(movingCameraCoroutine);
-		controlledByPlayer = true; // TODO: lerp back to player
+		if (other.tag == Constants.TAG_CAMERA_FIXED_POINT) {
+			StopCoroutine(movingCameraCoroutine);
+			controlledByPlayer = true; // TODO: lerp back to player
+		}
 	}
 
 	void FollowPlayer() {

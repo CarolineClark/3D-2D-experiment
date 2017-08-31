@@ -6,6 +6,6 @@ using  UnityEngine.SceneManagement;
 public class LeaveBakeryTrigger : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other) {
-		SceneManager.LoadScene(Constants.MAIN_SCENE);
+		SceneLoaderManager.instance.LoadMainSceneAtBakery();
 	}
 }

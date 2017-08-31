@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SpawnPoints : MonoBehaviour {
 
-	private const string CASTLE = "Castle";
-	private const string BAKERY = "Bakery";
+	private const string CASTLE = "Main/Castle";
+	private const string BAKERY_IN_MAIN_SCENE = "Main/Bakery";
 	Transform castleSpawnPoint;
 	Transform bakerySpawnPoint;
 	public static SpawnPoints instance = null;
@@ -21,16 +21,25 @@ public class SpawnPoints : MonoBehaviour {
 	}
 
 	void Start () {
+		Debug.Log("Spawnpoint instance = " + instance);
 		castleSpawnPoint = transform.Find(CASTLE);
 		if (transformActive(castleSpawnPoint)) {
 			Debug.LogError("castle spawn point is not loaded");
 			UnityEditor.EditorApplication.isPlaying = false;
 		}
-		bakerySpawnPoint = transform.Find(BAKERY);
+		bakerySpawnPoint = transform.Find(BAKERY_IN_MAIN_SCENE);
 		if (transformActive(bakerySpawnPoint)) {
 			Debug.LogError("bakery spawn point is not loaded");
 			UnityEditor.EditorApplication.isPlaying = false;
 		}
+	}
+
+	public Transform CastleSpawnPoint() {
+		return castleSpawnPoint;
+	}
+
+	public Transform BakerySpawnPoint() {
+		return bakerySpawnPoint;
 	}
 
 	private bool transformActive(Transform t) {
