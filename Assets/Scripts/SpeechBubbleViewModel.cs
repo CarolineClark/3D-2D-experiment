@@ -45,7 +45,7 @@ public class SpeechBubbleViewModel : MonoBehaviour {
 	}
 
     void OnResponseClicked(string text, IConversationUiElement element) {
-        conversation.SetResponse(text);
+        conversation.SetSelectedChoice(text);
 		InitialiseUIElements(conversation);
 		element.Remove();
     }

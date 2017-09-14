@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using System;
 
 public class NPC : MonoBehaviour {
 
@@ -12,6 +14,8 @@ public class NPC : MonoBehaviour {
 		Canvas canvas = GetComponentInChildren<Canvas>();
 		button = canvas.GetComponentInChildren<Button>();
 		button.gameObject.SetActive(false);
+		UnityAction cb = delegate() {OnClickedShowSpeech();};
+		button.onClick.AddListener(cb);
 	}
 
 	void OnTriggerEnter(Collider other) {

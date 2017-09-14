@@ -13,6 +13,7 @@ public class Constants {
     public const string MAIN_SCENE = "Main";
     public const string THONE_ROOM_SCENE = "ThroneRoom";
     public const string BAKER_GAMEOBJECT_NAME = "Baker";
+    public const string MELISSA_GAMEOBJECT_NAME = "Melissa";
     public const string TAG_CAMERA_FIXED_POINT = "CameraFixedPoint";
     public const string TAG_MAIN_CAMERA = "MainCamera";
 }

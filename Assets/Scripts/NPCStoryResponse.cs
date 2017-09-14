@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
 public class NPCStoryMessage {
-    public string Key { get; }
     public List<string> TextToShow { get; }
     public List<string> Choices { get; }
 
-    public NPCStoryMessage(string key, List<string> textToShow, List<string> choices) {
-        Key = key;
+    public NPCStoryMessage(List<string> textToShow, List<string> choices) {
         TextToShow = textToShow;
         Choices = choices;
     }
