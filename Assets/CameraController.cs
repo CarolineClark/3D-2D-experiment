@@ -30,8 +30,8 @@ public class CameraController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		controlledByPlayer = false;
 		if (other.tag == Constants.TAG_CAMERA_FIXED_POINT) {
+			controlledByPlayer = false;
 			startTime = Time.time;
 			startPosition = playerCamera.transform.position;
 			endPosition = other.transform.position;
