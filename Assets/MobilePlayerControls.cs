@@ -10,14 +10,13 @@ public class MobilePlayerControls : MonoBehaviour {
 		off, shortTap, longTap, swipe, joystick
 	}
 	private FingerAction rightFingerAction;
-
 	private CharacterController controller;
 	private float speed = 20F;
 	public float leftJoystickRange = 200;
     public float rightJoystickRange = 300;
 	public float tapLength = 0.3f;
     public Animator animator;
-    private float jumpSpeed = 15.0F;
+    private float jumpSpeed = 0.0F;
     private float gravity = 9.8F;
     private Vector3 moveDirection = Vector3.zero;
 	private TouchPositionsDict touchPositionsDict;
@@ -31,6 +30,7 @@ public class MobilePlayerControls : MonoBehaviour {
     private bool flipped = false;
     private bool cameraFlipped = false;
     private EventSystem eventSystem;
+    private bool playerMoving = true;
 
 	void Start () {
 		// isMobile = (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer);
@@ -73,7 +73,9 @@ public class MobilePlayerControls : MonoBehaviour {
 
     void Update() {
 		if (isMobile) {
-			ReadTouches();
+            if (playerMoving) {
+                ReadTouches();
+            }
 		} else {
 			var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
 			var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;

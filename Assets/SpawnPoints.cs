@@ -25,12 +25,12 @@ public class SpawnPoints : MonoBehaviour {
 		castleSpawnPoint = transform.Find(CASTLE);
 		if (transformActive(castleSpawnPoint)) {
 			Debug.LogError("castle spawn point is not loaded");
-			UnityEditor.EditorApplication.isPlaying = false;
+			// UnityEditor.EditorApplication.isPlaying = false;
 		}
 		bakerySpawnPoint = transform.Find(BAKERY_IN_MAIN_SCENE);
 		if (transformActive(bakerySpawnPoint)) {
 			Debug.LogError("bakery spawn point is not loaded");
-			UnityEditor.EditorApplication.isPlaying = false;
+			// UnityEditor.EditorApplication.isPlaying = false;
 		}
 	}
 

@@ -23,13 +23,18 @@ public class NPC : MonoBehaviour {
 	void OnTriggerExit(Collider other) {
 		if (other.tag == Constants.PLAYER_TAG) {
 			button.gameObject.SetActive(false);
-			EventManager.TriggerEvent(Constants.EVENT_NPC_STOP_SPEAK);
+			NPCCharacterDialog.StopSpeakingToNpc();
 		}
 	}
 	
 	public void OnClickedShowSpeech () {
-		Debug.Log("clicked on button");
-		EventManager.TriggerEvent(Constants.EVENT_NPC_SPEAK, NPCCharacterDialog.CreateHashtable(key));
+		NPCCharacterDialog.SpeakToNpc(key);
 		button.gameObject.SetActive(false);
+		EventManager.StartListening(Constants.EVENT_NPC_STOP_SPEAK, ShowButton);
+	}
+
+	void ShowButton(Hashtable h) {
+		button.gameObject.SetActive(true);
+		EventManager.StopListening(Constants.EVENT_NPC_STOP_SPEAK, ShowButton);
 	}
 }

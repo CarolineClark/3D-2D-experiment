@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public interface INPCStory {
-    string GetSpeech();
-    List<string> GetPlayerResponses();
-    void SetPlayerResponse(string response);
-    void LoadFromSave(string file);
+    // string Continue();
+    // bool CanContinue();
+    // List<string> GetChoices();
+    // void SelectChoice(string text);
+    INPCConversation StartConversation();
 }
