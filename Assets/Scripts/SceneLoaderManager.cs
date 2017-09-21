@@ -3,6 +3,8 @@ using  UnityEngine.SceneManagement;
 
 public class SceneLoaderManager : MonoBehaviour {
     public static SceneLoaderManager instance = null;
+    GameObject player;
+    GameObject camera;
 
     void Awake() {
         if (instance == null) {
@@ -13,6 +15,12 @@ public class SceneLoaderManager : MonoBehaviour {
         }
         DontDestroyOnLoad(gameObject);
 	}
+
+    public void Start() {
+        player = GameObject.FindWithTag(Constants.PLAYER_TAG);
+        camera = GameObject.FindWithTag(Constants.MAIN_CAMERA_TAG);
+
+    }
     
     public void LoadMainSceneAtCastle() {
         SceneManager.sceneLoaded += LoadingMainSceneFromCastle;
@@ -31,7 +39,10 @@ public class SceneLoaderManager : MonoBehaviour {
     void LoadingMainSceneFromCastle(Scene scene, LoadSceneMode mode)
     {
         GameObject player = GameObject.FindWithTag(Constants.PLAYER_TAG);
-        player.transform.position = SpawnPoints.instance.CastleSpawnPoint().position;
+        Vector3 position = SpawnPoints.instance.CastleSpawnPoint().position;
+        player.transform.position = position;
+        GameObject camera = GameObject.FindWithTag(Constants.MAIN_CAMERA_TAG);
+        camera.transform.position = position + player.GetComponent<CameraController>().playerCameraOffset;
         SceneManager.sceneLoaded -= LoadingMainSceneFromCastle;
     }
 

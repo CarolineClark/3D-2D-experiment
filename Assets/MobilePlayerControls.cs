@@ -39,9 +39,9 @@ public class MobilePlayerControls : MonoBehaviour {
 		controller = GetComponent<CharacterController>();
 		leftMinDragDistance = 5;
 		rightMinDragDistance = 20;
-		touchPositionsDict = new TouchPositionsDict();
-		rightFingerAction = FingerAction.off;
         eventSystem = EventSystem.current;
+		touchPositionsDict = new TouchPositionsDict(eventSystem);
+		rightFingerAction = FingerAction.off;
 	}
 
 	void FixedUpdate() {
@@ -119,7 +119,7 @@ public class MobilePlayerControls : MonoBehaviour {
             }
             else if (touch.phase == TouchPhase.Ended) {
 				float minDistance;
-				bool isLeft = touchPositionsDict.GetOnLeftForId(touch.fingerId);
+				bool isLeft = touchPositionsDict.GetOnLeftForId(touch);
 				if (isLeft) {
 					leftFingerHorizontal = 0;
                 	leftFingerVertical = 0;
@@ -129,11 +129,11 @@ public class MobilePlayerControls : MonoBehaviour {
                 	rightFingerVertical = 0;
 					minDistance = rightMinDragDistance;
 				}
-                Vector3 firstPos = touchPositionsDict.GetFirstForId(touch.fingerId);
+                Vector3 firstPos = touchPositionsDict.GetFirstForId(touch);
                 Vector3 lastPos = touch.position;
-                float startTime = touchPositionsDict.GetStartTimeForId(touch.fingerId);
+                float startTime = touchPositionsDict.GetStartTimeForId(touch);
 				
-                if (!touchPositionsDict.IsOnButtonForId(touch.fingerId)) {
+                if (!touchPositionsDict.IsOnButtonForId(touch)) {
                     if (IsSwipeDistanceLargeEnough(firstPos, lastPos, minDistance)) {
                         CheckTypeOfSwipe(firstPos, lastPos, touch.fingerId);
                     } else {
@@ -145,12 +145,12 @@ public class MobilePlayerControls : MonoBehaviour {
 	}
 
 	void CheckMovementJoysticks(Touch touch) {
-        Vector3 firstPos = touchPositionsDict.GetFirstForId(touch.fingerId);
+        Vector3 firstPos = touchPositionsDict.GetFirstForId(touch);
         Vector3 lastPos = touch.position;
-		float minDistance = touchPositionsDict.GetOnLeftForId(touch.fingerId) ? leftMinDragDistance : rightMinDragDistance;
+		float minDistance = touchPositionsDict.GetOnLeftForId(touch) ? leftMinDragDistance : rightMinDragDistance;
         if (IsSwipeDistanceLargeEnough(firstPos, lastPos, minDistance)) {
             Vector2 joystickVec;
-            if (touchPositionsDict.GetOnLeftForId(touch.fingerId)) {
+            if (touchPositionsDict.GetOnLeftForId(touch)) {
                 joystickVec = CheckDirectionOfJoystick(firstPos, lastPos, touch.fingerId, leftJoystickRange);
                 leftFingerHorizontal = joystickVec.x;
                 leftFingerVertical = joystickVec.y;

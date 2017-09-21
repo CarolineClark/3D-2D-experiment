@@ -10,6 +10,7 @@ public class StoryManager : MonoBehaviour {
     Baker baker;
     Melissa melissa;
     Melody melody;
+    Tigerlily tigerlily;
     private I18n i18n = I18n.Instance;
     public bool canContinue { get; }
 

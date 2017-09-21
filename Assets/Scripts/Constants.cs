@@ -1,5 +1,6 @@
 public class Constants {
     public const string PLAYER_TAG = "Player";
+    public const string MAIN_CAMERA_TAG = "MainCamera";
     public const string EVENT_NPC_SPEAK = "NPCSpeak";
     public const string EVENT_NPC_STOP_SPEAK = "NPCStopSpeaking";
     public const string EVENT_NPC_QUESTION = "NPCQuestion";
@@ -15,6 +16,9 @@ public class Constants {
     public const string BAKER_GAMEOBJECT_NAME = "Baker";
     public const string MELISSA_GAMEOBJECT_NAME = "Melissa";
     public const string MELODY_GAMEOBJECT_NAME = "Melody";
+    public const string TIGERLILY_GAMEOBJECT_NAME = "Tigerlily";
+    public const string TOPAZ_GAMEOBJECT_NAME = "Topaz";
     public const string TAG_CAMERA_FIXED_POINT = "CameraFixedPoint";
+    public const string TAG_CAMERA_CHANGE_OFFSET = "ChangeCameraOffset";
     public const string TAG_MAIN_CAMERA = "MainCamera";
 }

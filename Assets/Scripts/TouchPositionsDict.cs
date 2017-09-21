@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class TouchPositionsDict {
+    private EventSystem eventSystem;
     private class TouchPositions {
 		Vector3 f;
 		public Vector3 first { 
@@ -41,7 +43,8 @@ public class TouchPositionsDict {
 
     private Dictionary<int, TouchPositions> touchPositionsDict;
 
-    public TouchPositionsDict() {
+    public TouchPositionsDict(EventSystem eventSystem) {
+        this.eventSystem = eventSystem;
         touchPositionsDict = new Dictionary<int, TouchPositions>();
     }
 
@@ -58,27 +61,32 @@ public class TouchPositionsDict {
         }
     }
 
-    public Vector3 GetFirstForId(int fingerId) {
-        return GetTouchPositionsForId(fingerId).first;
+    public Vector3 GetFirstForId(Touch touch) {
+        return GetTouchPositionsForId(touch).first;
     }
 
-    public float GetStartTimeForId(int fingerId) {
-        return GetTouchPositionsForId(fingerId).startTime;
+    public float GetStartTimeForId(Touch touch) {
+        return GetTouchPositionsForId(touch).startTime;
     }
-    public bool GetOnLeftForId(int fingerId) {
-        return GetTouchPositionsForId(fingerId).onLeft;
-    }
-
-    public bool IsOnButtonForId(int fingerId) {
-        return GetTouchPositionsForId(fingerId).onButton;
+    public bool GetOnLeftForId(Touch touch) {
+        return GetTouchPositionsForId(touch).onLeft;
     }
 
-    private TouchPositions GetTouchPositionsForId(int fingerId) {
+    public bool IsOnButtonForId(Touch touch) {
+        return GetTouchPositionsForId(touch).onButton;
+    }
+
+    private TouchPositions GetTouchPositionsForId(Touch touch) {
         TouchPositions touchPositions;
-        bool containsKey = touchPositionsDict.TryGetValue(fingerId, out touchPositions);
+        bool containsKey = touchPositionsDict.TryGetValue(touch.fingerId, out touchPositions);
         if (!containsKey) {
-            Debug.LogError("no key matching");
+            touchPositions = new TouchPositions(touch.position, Time.time, OnButton(touch));
+            touchPositionsDict.Add(touch.fingerId, touchPositions);
         }
         return touchPositions;
+    }
+
+    private bool OnButton(Touch touch) {
+        return !eventSystem.IsPointerOverGameObject(touch.fingerId);
     }
 }
