@@ -11,6 +11,10 @@ public class ConversationHelper: INPCConversation {
         storyTree = JsonUtility.FromJson<StoryTree>(json);
     }
 
+    public ConversationHelper(StoryTree tree) {
+        storyTree = tree;
+    }
+
     public NPCStoryMessage GetStory() {
         List<string> choices = new List<string>();
         foreach (StoryTree choice in storyTree.choices ?? new StoryTree[]{}) {

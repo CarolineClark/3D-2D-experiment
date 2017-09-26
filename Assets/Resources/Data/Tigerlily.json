@@ -1,0 +1,19 @@
+
+{
+    "TIGERLILY": {
+        "text": [
+            "....",
+            "Excuse me. I don't talk to commoners."
+        ]
+    },
+    "TIGERLILY_OPTIONAL_CHOICES": 
+        [
+            {
+                "selected": "Melody says hi",
+                "text": ["...oh!", "You know her?"]
+            },
+            {
+                "selected": "(Say nothing)"
+            }
+        ]
+}

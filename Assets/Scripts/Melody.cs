@@ -5,10 +5,16 @@ using UnityEngine;
 
 
 class Melody : INPCStory {
-    public INPCConversation StartConversation() {
+    MelodyContext context;
+    public Melody(Context context) {
+        this.context = context.melody;
+    }
+
+    public INPCConversation StartConversation() {    
         string jsonTree = @"{
             ""text"": [""Say hi to Tigerlily from me!""]
         }";
+        context.spokeOutsideCastle = true;
         return new ConversationHelper(jsonTree);
     }
 }

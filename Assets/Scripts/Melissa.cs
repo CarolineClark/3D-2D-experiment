@@ -5,6 +5,8 @@ using UnityEngine;
 
 
 class Melissa : INPCStory {
+    public Melissa() {
+    }
     public INPCConversation StartConversation() {
         string jsonTree = @"{
             ""text"": [""Hello dear!"", ""Aren't you a cutie!""],

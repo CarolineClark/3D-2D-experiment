@@ -1,3 +1,4 @@
+[System.Serializable]
 public class BakerContext {
     public enum WifeStatus {
         SICK, DEAD, RECOVERED
@@ -11,7 +12,7 @@ public class BakerContext {
         DOWNSTAIRS, UPSTAIRS
     }
 
-    public WifeStatus wifeStatus { get; set; }
-    public PlayerKnowledge playerKnowledge { get; set; }
-    public BakerLocation bakerLocation { get; set; }
+    public WifeStatus wifeStatus;
+    public PlayerKnowledge playerKnowledge;
+    public BakerLocation bakerLocation;
 }
