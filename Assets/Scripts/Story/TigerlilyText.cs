@@ -35,6 +35,10 @@ public class TigerlilyText {
     private static StoryTree CreateChoiceAndReplies(string choice, params string[] list) {
         StoryTree choicetree = new StoryTree();
         choicetree.selected = i18n.__(choice);
+
+        if (list == null) {
+            list = new string[] {};
+        }
         InsertTextIntoTree(choicetree, list);
         return choicetree;
     }

@@ -40,8 +40,10 @@ public class SpeechBubbleViewModel : MonoBehaviour {
 		for (int i=0; i<=uiElements.Count - 2; i++) {
 			uiElements[i].NextElement = uiElements[i + 1];
 		}
-		currentElement = uiElements[0];
-		currentElement.Show();
+		if (uiElements.Count > 0) {
+			currentElement = uiElements[0];
+			currentElement.Show();
+		}
 	}
 
     void OnResponseClicked(string text, IConversationUiElement element) {

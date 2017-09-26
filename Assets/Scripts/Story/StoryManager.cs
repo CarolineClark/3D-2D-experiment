@@ -18,10 +18,8 @@ public class StoryManager : MonoBehaviour {
 
     void Awake() {
         if (instance == null) {
-            Debug.Log("new instance assigned");
             instance = this;
         } else if (instance != this) {
-            Debug.Log("Destroying old instance");
             Destroy(gameObject);
             return;
         }
@@ -31,9 +29,7 @@ public class StoryManager : MonoBehaviour {
 
     void InitGame() {
         I18n.SetLocale("en-GB");
-        Debug.Log("hit initgame()");
         if (context == null) {
-            Debug.Log("initialisaing context");
             context = new Context();
             baker = new Baker(context);
             melissa = new Melissa();
