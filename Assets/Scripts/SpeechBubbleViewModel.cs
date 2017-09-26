@@ -40,9 +40,12 @@ public class SpeechBubbleViewModel : MonoBehaviour {
 		for (int i=0; i<=uiElements.Count - 2; i++) {
 			uiElements[i].NextElement = uiElements[i + 1];
 		}
+		
 		if (uiElements.Count > 0) {
 			currentElement = uiElements[0];
 			currentElement.Show();
+		} else {
+			EventManager.TriggerEvent(Constants.EVENT_NPC_STOP_SPEAK, null);
 		}
 	}
 

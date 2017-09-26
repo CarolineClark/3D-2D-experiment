@@ -30,7 +30,9 @@ public class ConversationHelper: INPCConversation {
         foreach (StoryTree choice in storyTree.choices) {
             if (choice.selected == selectedChoice) {
                 storyTree = choice;
-                storyTree.action();
+                if (storyTree.action != null) {
+                    storyTree.action();
+                }
                 return;
             }
         }
